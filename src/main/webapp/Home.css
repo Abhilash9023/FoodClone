@@ -1,0 +1,109 @@
+/* Reset and base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    background-color:black; /* light green */
+    font-family: Arial, sans-serif;
+    color: #333;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top bar styling */
+.top-bar {
+    background-color:black;
+    color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Welcome text */
+.welcome {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Search and sort input controls */
+.search-sort {
+    display: flex;
+    gap: 10px;
+}
+
+.search-sort input,
+.search-sort select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}
+
+/* Restaurant grid layout (3 columns always) */
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 30px;
+    padding: 0 40px;
+}
+
+/* Restaurant card link wrapper */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Restaurant card box */
+.restaurant-card {
+    background-color:white;
+    color: green;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+/* Card hover effect */
+.restaurant-card:hover {
+    transform: scale(1.03);
+}
+
+/* Restaurant image styling */
+.restaurant-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
