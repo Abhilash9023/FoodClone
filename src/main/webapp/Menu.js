@@ -1,4 +1,3 @@
-// Menu.js
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const menuItems = document.querySelectorAll("ul li");

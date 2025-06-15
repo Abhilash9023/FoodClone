@@ -31,13 +31,13 @@
         </div>
     </div>
 
-    <!-- ✅ Place grid container OUTSIDE the loop -->
+   
     <div class="restaurant-grid" id="restaurantGrid">
         <%
             if (rList != null) {
                 for (Restaurant r : rList) {
         %>
-            <!-- ✅ a.card-link is the clickable wrapper -->
+            
             <a href="menu?restid=<%=r.getRestaurantid()%>" class="card-link restaurant-card"
                data-name="<%= r.getName_of_the_restaurant().toLowerCase() %>"
                data-rating="<%= r.getRatings() %>"

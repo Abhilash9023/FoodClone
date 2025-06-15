@@ -19,14 +19,13 @@ public class Ordersdaoimpl implements Ordersdao {
     private ResultSet rs;
     private Orders k;
     
-    // SQL Queries
+    
     static String insert = "insert into Orders (UserID, RestaurantID, Totalamount, Status, PaymentMode) values(?,?,?,?,?)";
     static String fetchall = "select * from Orders";
     static String fetchone = "select * from Orders where Orderid=?";
     static String update = "update Orders set totalamount=? where orderid=?";
     static String delete = "delete from orders where orderid=?";
     
-    // Insert method - Modified to return the generated OrderID after insertion
     @Override
     public int insert(Orders O) {
         try {

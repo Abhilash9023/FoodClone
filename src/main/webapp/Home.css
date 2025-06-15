@@ -1,20 +1,17 @@
-/* Reset and base styling */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Body styling */
 body {
-    background-color:black; /* light green */
+    background-color: black;
     font-family: Arial, sans-serif;
     color: #333;
     height: 100vh;
     width: 100vw;
 }
 
-/* Container styling */
 .container {
     width: 100%;
     min-height: 100vh;
@@ -23,9 +20,8 @@ body {
     flex-direction: column;
 }
 
-/* Top bar styling */
 .top-bar {
-    background-color:black;
+    background-color: black;
     color: green;
     display: flex;
     justify-content: space-between;
@@ -36,13 +32,11 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Welcome text */
 .welcome {
     font-size: 18px;
     font-weight: bold;
 }
 
-/* Search and sort input controls */
 .search-sort {
     display: flex;
     gap: 10px;
@@ -56,23 +50,20 @@ body {
     font-size: 14px;
 }
 
-/* Restaurant grid layout (3 columns always) */
 .restaurant-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 0 40px;
 }
 
-/* Restaurant card link wrapper */
 .card-link {
     text-decoration: none;
     color: inherit;
 }
 
-/* Restaurant card box */
 .restaurant-card {
-    background-color:white;
+    background-color: white;
     color: green;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -81,12 +72,10 @@ body {
     text-align: center;
 }
 
-/* Card hover effect */
 .restaurant-card:hover {
     transform: scale(1.03);
 }
 
-/* Restaurant image styling */
 .restaurant-image {
     width: 100%;
     height: 150px;
@@ -95,15 +84,14 @@ body {
     margin-bottom: 10px;
 }
 
-
 @media screen and (max-width: 1024px) {
     .restaurant-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media screen and (max-width: 768px) {
     .restaurant-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
 }

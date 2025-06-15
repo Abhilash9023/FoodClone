@@ -5,7 +5,7 @@
     <title>Payment Page</title>
     <style>
         body {
-            background: linear-gradient(to right, #d4fc79, #96e6a1); /* Fresh green gradient background */
+            background: linear-gradient(to right, #d4fc79, #96e6a1); 
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 40px;
@@ -17,7 +17,7 @@
         }
 
         form {
-            background-color: #e8f5e9; /* Very light green form background */
+            background-color: #e8f5e9; 
             max-width: 500px;
             margin: 0 auto;
             padding: 30px;
@@ -53,7 +53,7 @@
         }
 
         input[type="submit"] {
-            background-color: #28a745; /* Green button */
+            background-color: #28a745; 
             color: white;
             padding: 12px 20px;
             border: none;
@@ -74,7 +74,7 @@
     <h2>Payment & Delivery Details</h2>
     
     <form action="checkout" method="post">
-        <!-- Address Details -->
+        
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" name="fullName" required>
 

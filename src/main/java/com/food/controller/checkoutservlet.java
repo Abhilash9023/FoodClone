@@ -30,35 +30,28 @@ public class checkoutservlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 
-        
         cart cart = (cart) session.getAttribute("cart");
         ArrayList<Menu> Mlist = (ArrayList<Menu>) session.getAttribute("menulist");
 
         int restaurantid = 0;
         if (Mlist != null && !Mlist.isEmpty()) {
-            restaurantid = Mlist.get(0).getRestaurantId(); // assuming all items are from the same restaurant
+            restaurantid = Mlist.get(0).getRestaurantId();
         }
 
-        // Get payment method
         String payment = req.getParameter("paymentMethod");
 
-        // Get total amount
         int totalAmount = (int) session.getAttribute("totalAmount");
         float total = (float) totalAmount;
 
-        // Get user
         User user = (User) session.getAttribute("user");
         int userid = user.getUserid();
 
-        // Set order status
         String status = "pending";
 
-        // Insert order
         Ordersdao ordersDao = new Ordersdaoimpl();
         Orders newOrder = new Orders(userid, restaurantid, total, status, payment);
         int orderid = ordersDao.insert(newOrder);
 
-        // Insert order items
         if (cart != null && !cart.getCartItems().isEmpty()) {
             Collection<Cartitem> items = cart.getCartItems();
             for (Cartitem item : items) {
@@ -68,11 +61,10 @@ public class checkoutservlet extends HttpServlet {
 
                 Ordersitems orderItem = new Ordersitems(orderid, menuid, quantity, itemTotal);
                 Ordersitemsdao orderItemsDao = new Ordersitemsdaoimpl();
-                orderItemsDao.insert(orderItem); // assuming insert method returns success or not
+                orderItemsDao.insert(orderItem);
             }
         }
 
-        // Redirect to success page
         resp.sendRedirect("success.jsp");
     }
 }
